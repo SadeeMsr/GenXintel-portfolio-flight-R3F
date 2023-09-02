@@ -27,9 +27,7 @@ export const Experience = () => {
       new THREE.Vector3(100, 0, -2 * CURVE_DISTANCE),
       new THREE.Vector3(-100, 0, -3 * CURVE_DISTANCE),
       new THREE.Vector3(100, 0, -4 * CURVE_DISTANCE),
-      new THREE.Vector3(0, 0, -5 * CURVE_DISTANCE),
-      new THREE.Vector3(0, 0, -6 * CURVE_DISTANCE),
-      new THREE.Vector3(0, 0, -7 * CURVE_DISTANCE),
+      new THREE.Vector3(0, 0, -5 * CURVE_DISTANCE)
     ],
     []
   );
@@ -55,6 +53,8 @@ export const Experience = () => {
         key: 0,
         btnTitle: "Let's visit",
         link: "https://www.genxintel.com/",
+        btnPosition_lg:[0.78, -1.2, 0],
+        btnPosition_sm: [0.9,-1.3,0]
       },
       {
         cameraRailDist: 1.5,
@@ -68,6 +68,8 @@ export const Experience = () => {
         key: 1,
         btnTitle: "Services",
         link: "https://www.genxintel.com/features",
+        btnPosition_lg:[0.78, -1.2, 0],
+        btnPosition_sm: [0.9,-1.3,0]
       },
       {
         cameraRailDist: -1,
@@ -81,6 +83,8 @@ export const Experience = () => {
         key: 2,
         btnTitle: "Clients",
         link: "https://www.genxintel.com/store",
+        btnPosition_lg:[0.78, -1.6, 0],
+        btnPosition_sm: [0.9,-1.65,0]
       },
       {
         cameraRailDist: 1.5,
@@ -94,6 +98,8 @@ export const Experience = () => {
         key: 3,
         btnTitle: "Company",
         link: "https://www.genxintel.com/company",
+        btnPosition_lg:[0.78, -1.6, 0],
+        btnPosition_sm: [0.9,-1.65,0]
       },
     ];
   }, []);
@@ -248,26 +254,7 @@ export const Experience = () => {
           curvePoints[4].z - 62
         ),
         rotation: new Euler(Math.PI / 3, 0, Math.PI / 3),
-      },
-      // FINAL
-      {
-        scale: new Vector3(3, 3, 3),
-        position: new Vector3(
-          curvePoints[7].x + 12,
-          curvePoints[7].y - 5,
-          curvePoints[7].z + 60
-        ),
-        rotation: new Euler(-Math.PI / 4, -Math.PI / 6, 0),
-      },
-      {
-        scale: new Vector3(3, 3, 3),
-        position: new Vector3(
-          curvePoints[7].x - 12,
-          curvePoints[7].y + 5,
-          curvePoints[7].z + 120
-        ),
-        rotation: new Euler(Math.PI / 4, Math.PI / 6, 0),
-      },
+      }
     ],
     []
   );
@@ -534,7 +521,7 @@ export const Experience = () => {
         </group>
         {/* TEXT */}
         {textSections.map((textSection) => (
-          <TextSection {...textSection} key={textSection.key} />
+          <TextSection sceneOpacity={sceneOpacity} {...textSection} key={textSection.key} />
         ))}
 
         {/* LINE */}

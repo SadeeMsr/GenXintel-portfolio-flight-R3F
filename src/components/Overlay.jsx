@@ -25,12 +25,10 @@ export const Overlay = () => {
       {progress === 100 && (
         <div className={`intro ${play ? "intro--disappear" : ""}`}>
           {/* <Logo /> */}
-          <h1 className="logo" onClick={()=> handleContactUs("/")}>
-            <img
-              width="100%"
-              src="https://uploads-ssl.webflow.com/64b90955ad5a6e90a1b9fb36/64b909b1a4a6aad970b62183_white-ai-p-500.png"
-              alt=""
-            />
+          <a href="/" className="logo">
+            <div className="logo_container">
+              <img width="100%" src="/vectorLogoGenX.png" alt="" />
+            </div>
             <div className="wrapper">
               <div className="animated-circle-text">
                 <svg viewBox="0 0 244.1 244.1">
@@ -42,13 +40,13 @@ export const Overlay = () => {
                   />
                   <text>
                     <textPath href="#circlePath">
-                      Let's revolutionize the Software Industry.
+                      Let's revolutionize the Software Industry!
                     </textPath>
                   </text>
                 </svg>
               </div>
             </div>
-          </h1>
+          </a>
           <p className="intro__scroll">Scroll to begin the journey</p>
           <button
             className="explore"
@@ -62,11 +60,13 @@ export const Overlay = () => {
       )}
       <div className={`outro ${end ? "outro--appear" : ""}`}>
         <div className="outro_container">
-          <p className="outro__text">Wish you had a great flight with us...</p>
+          <p className="outro__text">Wish you had a great flight with us!</p>
           <button onClick={handleContactUs} className="glow-on-hover">
             Contact us
           </button>
-          <a className="start_over_link" href="/">Start again</a>
+          <a className="start_over_link" href="/">
+            Start again
+          </a>
         </div>
       </div>
     </div>
